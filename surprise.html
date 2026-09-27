@@ -1,0 +1,130 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>One More Thing... 🎁</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <main class="birthday-card">
+
+        <div class="birthday-emojis">
+            🎁 🎂 🎉
+        </div>
+
+        <p class="small-text">
+            WAIT... THERE'S MORE
+        </p>
+
+        <h1>
+            Okay, okay...
+        </h1>
+
+        <h2>
+            Enough calling you old. 😂
+        </h2>
+
+        <p class="message">
+            I made this little website because
+            <br>
+            I wanted to do something different for your birthday.
+        </p>
+
+        <button onclick="showMessage()">
+            OPEN YOUR BIRTHDAY MESSAGE 🎁
+        </button>
+
+        <div id="birthdayMessage" class="hidden-message">
+
+            <h2>
+                HAPPY BIRTHDAY, LIYA! 🎂
+            </h2>
+
+            <p class="message">
+                I hope you have an amazing birthday
+                <br>
+                and an even better year ahead.
+            </p>
+
+            <p class="message">
+                Keep laughing, keep being yourself,
+                <br>
+                and keep being the Arrogit you are. 😂👵🏽
+            </p>
+
+            <div class="argogit">
+                🎉 <strong>HAPPY BIRTHDAY ARROGIT</strong> 🎉
+            </div>
+
+        </div>
+
+        <button class="back-button" onclick="goBack()">
+            ← GO BACK
+        </button>
+
+    </main>
+
+    <script>
+        function showMessage() {
+
+            const message =
+                document.getElementById("birthdayMessage");
+
+            message.classList.add("show");
+
+            createConfetti();
+        }
+
+        function createConfetti() {
+
+            const emojis = [
+                "🎉",
+                "🎊",
+                "🎂",
+                "🎁",
+                "🥳",
+                "👵🏽"
+            ];
+
+            for (let i = 0; i < 40; i++) {
+
+                const confetti =
+                    document.createElement("div");
+
+                confetti.classList.add("confetti");
+
+                confetti.innerText =
+                    emojis[
+                        Math.floor(
+                            Math.random() * emojis.length
+                        )
+                    ];
+
+                confetti.style.left =
+                    Math.random() * 100 + "vw";
+
+                confetti.style.animationDuration =
+                    (Math.random() * 3 + 2) + "s";
+
+                document.body.appendChild(confetti);
+
+                setTimeout(function () {
+                    confetti.remove();
+                }, 5000);
+            }
+        }
+
+        function goBack() {
+            history.back();
+        }
+    </script>
+
+</body>
+
+</html>
+

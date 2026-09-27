@@ -1,0 +1,258 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+
+   background: linear-gradient(
+    135deg,
+    #7a3048,
+    #49345f,
+    #29294d
+);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    color: white;
+    overflow: hidden;
+}
+
+/* Main birthday card */
+
+.birthday-card {
+    width: 90%;
+    max-width: 650px;
+    padding: 50px 30px;
+    text-align: center;
+
+    background: rgba(255, 255, 255, 0.18);
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    border-radius: 30px;
+
+    backdrop-filter: blur(15px);
+
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
+
+    animation: appear 1s ease;
+
+    z-index: 2;
+}
+
+/* Birthday emojis */
+
+.birthday-emojis {
+    font-size: 55px;
+    margin-bottom: 20px;
+    animation: bounce 2s infinite;
+}
+
+/* Small heading */
+
+.small-text {
+    margin-top: 10px;
+    font-size: 13px;
+    letter-spacing: 2px;
+}
+
+/* Main heading */
+
+h1 {
+    margin-top: 15px;
+    font-size: 48px;
+    letter-spacing: 3px;
+}
+
+/* Name */
+
+h2 {
+    margin-top: 10px;
+    font-size: 30px;
+}
+
+/* ARGOGIT */
+
+.argogit {
+    margin: 25px 0;
+    font-size: 32px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    gap: 15px;
+}
+
+.argogit strong {
+    color: white;
+    text-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
+}
+
+/* Message */
+
+.message {
+    font-size: 18px;
+    line-height: 1.7;
+}
+
+/* Warning */
+
+.warning {
+    margin-top: 20px;
+    font-size: 14px;
+    opacity: 0.9;
+}
+
+/* Buttons */
+
+button {
+    margin-top: 30px;
+
+    padding: 15px 30px;
+
+    border: none;
+    border-radius: 50px;
+
+    background: white;
+    color: #e94f7c;
+
+    font-size: 16px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+button:hover {
+    transform: scale(1.08);
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.25);
+}
+
+/* Back button */
+
+.back-button {
+    display: block;
+
+    margin: 12px auto 0;
+
+    padding: 10px 22px;
+
+    background: transparent;
+    color: white;
+
+    border: 1px solid rgba(255, 255, 255, 0.6);
+
+    font-size: 14px;
+}
+
+.back-button:hover {
+    background: rgba(255, 255, 255, 0.15);
+
+    transform: scale(1.05);
+}
+
+/* Page transition */
+
+.fade-out {
+    animation: fadeOut 0.8s ease forwards;
+}
+
+/* Animations */
+
+@keyframes bounce {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-12px);
+    }
+}
+
+@keyframes appear {
+
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes fadeOut {
+
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+
+/* Phone */
+
+@media (max-width: 600px) {
+
+    h1 {
+        font-size: 34px;
+    }
+
+    h2 {
+        font-size: 24px;
+    }
+
+    .argogit {
+        font-size: 25px;
+    }
+
+    .birthday-emojis {
+        font-size: 42px;
+    }
+
+    .birthday-card {
+        padding: 40px 20px;
+    }
+}
+
+.hidden-message {
+    display: none;
+    margin-top: 30px;
+    animation: appear 0.8s ease;
+}
+
+.hidden-message.show {
+    display: block;
+}
+
+.confetti {
+    position: fixed;
+    top: -50px;
+    font-size: 25px;
+    z-index: 10;
+    pointer-events: none;
+    animation: fall linear forwards;
+}
+
+@keyframes fall {
+    from {
+        transform: translateY(0) rotate(0deg);
+    }
+
+    to {
+        transform: translateY(110vh) rotate(360deg);
+    }
+}
